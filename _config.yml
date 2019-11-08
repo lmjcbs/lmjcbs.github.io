@@ -1,11 +1,11 @@
 # Site settings
 author: Liam Jacobs
-title: 
+title: Flatiron School
 header-img: img/home-bg.png
 email: liamdavidjacobs@gmail.com
 copyright_name: Liam Jacobs
 description: > # this means to ignore newlines until "baseurl:"
-  
+  My projects and thoughts
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: 
 github_username:  lmjcbs
