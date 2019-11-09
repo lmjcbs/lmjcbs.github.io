@@ -14,11 +14,11 @@ The main takeaway from the scraper was that in order to have my CLI application 
 
 ### The Models
 All of my scraped company profiles would then be passed into a main company model that would generate a new instance for each company and assign the respective instance variables to the scraped data.
-My biggest issue faced here was to do with how I wanted to the user to have the ability to search the list of companies based on certain properties. I decided I wanted both location and industry as the properties and so I created two models for these properties. Upon initialization the companies would also need to make the link with these two models by saving an instance of themselves to the repsective instances for those models. 
+My biggest issue faced here was to do with how I wanted the user to have the ability to search the list of companies based on certain properties. I decided I wanted both location and industry as the properties and so I created two models for these properties. Upon initialization the companies would also need to make the link with these two models by saving an instance of themselves to the repsective instances for those models. 
 This took some time, but once I had the bulk of the work done for one of the models, the second model was very quick to get setup - a theme I found throughout working through this project.
 
 ### CLI
-The command line interface for my project took some thinking to work out how best to achieve the control flow for my application that I wanted. It was simple to setup the seach tool so that users could see the company information based on their choices. The basic flow goes as follows:
+The command line interface for my project took some thinking to work out how best to achieve the control flow for my application that I wanted. It was simple to setup the search tool so that users could see the company information based on their choices. The basic flow goes as follows:
 
 1. Choose to search either by location or industry
 2. Choose a particular location or industry once receiving all of the availiable choices
