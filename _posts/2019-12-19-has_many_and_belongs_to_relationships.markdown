@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "has_many and belongs_to relationships"
-date:       2019-12-19 15:37:48 +0000
+date:       2019-12-19 10:37:49 -0500
 permalink:  has_many_and_belongs_to_relationships
 ---
 
@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
 end	
 ```
 
-**Note:** Ensure the model name which has the belongs_to association is pluralized when referring to the model from the has_many association , in this case **:jewels**.
+**Note:** Ensure the model name which has the belongs_to association is pluralized when referring to the model from the has_many association, in this case **:jewels**.
 
 The next step is to ensure ActiveRecord can make the link between the two models once their instances have been persisted to the database.  As the direction of the has_many belongs_to relationship is one way, we only need add a key to our jewels model, which should be named after the model with which it shares the realtionship. 
 
@@ -77,7 +77,6 @@ If we were currently logged into a user, and wanted to create a new jewel model,
 user1 = User.create(name: "Jack")
 jewel1 = Jewel.create(user_id: user1.id, name: "Emerald")
 jewel2 = Jewel.create(user_id: user1.id, name: "Sapphire")
-end	
 ```
 
 **Note:** We assign the id attribute of the user to the user_id attribute.
@@ -95,14 +94,12 @@ user1.jewels # => [
 {id: 1, name: "Emerald", user_id:  1},
 {id: 2, name: "Sapphire", user_id: 1}
 ]
-end	
 ```
 
 Returns an array of jewel objects that belong to user1, we can then find out more information about the user from these jewel objects.
 
 ```ruby
 user1.jewels.first.user # => {id: 1, name: "Jack"}
-end	
 ```
 
 Returns the user object that created the jewel instance .user is being called upon.
@@ -110,7 +107,6 @@ As these methods return standard ruby data types such as arries and objects, we 
 
 ```ruby
 user1.jewels.size # => 2
-end	
 ```
 
 
