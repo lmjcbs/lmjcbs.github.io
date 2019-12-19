@@ -104,7 +104,7 @@ user1.jewels.first.user # => {id: 1, name: "Jack"}
 
 Returns the user object that created the jewel instance .user is being called upon.
 
-As these methods return standard ruby data types such as arries and objects, we can also take advantage of methods available to us through ruby's standard library to retrieve more information.
+As these methods return standard ruby data types such as arrays and objects, we can also take advantage of methods available to us through ruby's standard library to retrieve more information.
 
 ```ruby
 user1.jewels.size # => 2
