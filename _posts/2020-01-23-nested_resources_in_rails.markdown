@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Nested Resources in Rails"
-date:       2020-01-23 11:16:42 +0000
+date:       2020-01-23 06:16:42 -0500
 permalink:  nested_resources_in_rails
 ---
 
@@ -13,7 +13,7 @@ A Project model which has an associated table in the database, that also has a p
 In the routes.rb file of my project I first need to establish the routes for this with,
 
 ```ruby
-#routes.rb
+#/config/routes.rb
 Rails.application.routes.draw do
 
 	root to: 'static#index'
@@ -70,7 +70,7 @@ Now we have the basis of a CRUD rails application, we can now go deeper and look
 To better understand what this will look like we can go ahead and define the nested resource in our routes.rb file again. 
 
 ```ruby
-#config/routes.rb
+#/config/routes.rb
 Rails.application.routes.draw do
 
 	root to: 'static#index'
@@ -108,19 +108,19 @@ Here we can see that instead of the standard prefix for the routes being used fo
 
 After ensuring we have set up the controller with appropriate actions to handle the crud functionality of the tasks, we also need to remember to define the association between the two models, in this case a Project has many tasks and a task belongs to a project. 
 
+
 ```ruby
-	#/models/project.rb
-	class Project
-		has_many :tasks
-		...
+#/models/project.rb
+class Project
+	has_many :tasks
+	...
+end
+
+#/models/task.rb
+class Task
+	belongs_to :project
+	...
 	end
-	
-	#/models/task.rb
-	class Task
-		belongs_to :project
-		...
-		end
-	end
-	```
+```
 
 
