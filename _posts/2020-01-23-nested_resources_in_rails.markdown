@@ -23,19 +23,8 @@ end
 ```
 
 We can view the routes this has created by entering ```rake routes``` into the terminal from our project directory.
+![](https://imgur.com/he7e7te)
 
-```bash
-~/development/code/projects/taskr   rake routes
-	
-									projects GET       /projects(.:format)                                                                         projects#index
-																	POST      /projects(.:format)                                                                         projects#create
-					new_project GET       /projects/new(.:format)                                                               projects#new
-					 edit_project GET       /projects/:id/edit(.:format)                                                         projects#edit
-											project GET      /projects/:id(.:format)                                                                  projects#show
-																	PATCH    /projects/:id(.:format)                                                                  projects#update
-                                      PUT      /projects/:id(.:format)                                                                  projects#update
-																	DELETE  /projects/:id(.:format)                                                                  projects#destroy
-```
 
 And then define the Controller to handle these newly defined actions. 
 
