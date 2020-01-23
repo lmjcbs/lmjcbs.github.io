@@ -46,7 +46,7 @@ class ProjectsController < ApplicationController
 	if @project.save
 		redirect_to @project
 	else
-		rendrer 'new'
+		render 'new'
 	end
 	
 	...
