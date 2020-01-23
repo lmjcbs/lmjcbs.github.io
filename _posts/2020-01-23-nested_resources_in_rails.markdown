@@ -24,8 +24,7 @@ end
 
 We can view the routes this has created by entering ```rake routes``` into the terminal from our project directory.
 
-
-[Imgur](https://i.imgur.com/jp9vrWS.png)
+![](https://i.imgur.com/jp9vrWS.png?1)
 
 
 And then define the Controller to handle these newly defined actions. 
@@ -78,7 +77,7 @@ Now if we head back to our terminal to view the routes for the porject with the 
 rake routes
 ```
 
-[Imgur](https://i.imgur.com/9QMiVHn.png)
+![](https://i.imgur.com/9QMiVHn.png?1)
 
 Here we can see that instead of the standard prefix for the routes being used for tasks, all task routes have a project prefix indicating we have correctly setup the nested routes.
 
