@@ -71,9 +71,7 @@ Rails.application.routes.draw do
 end
 ```
 
-Now if we head back to our terminal to view the routes for the porject with the rake routes commands we can see the additional routes that have been added to the project. 
-
-```rake routes```
+Now if we head back to our terminal to view the routes for the project with the ```rake routes``` command we can see the additional routes that have been added to the project. 
 
 ![](https://i.imgur.com/9QMiVHn.png?1)
 
