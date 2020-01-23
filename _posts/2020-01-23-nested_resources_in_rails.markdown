@@ -120,7 +120,7 @@ end
 class Task
 	belongs_to :project
 	...
-	end
+end
 ```
 
 
