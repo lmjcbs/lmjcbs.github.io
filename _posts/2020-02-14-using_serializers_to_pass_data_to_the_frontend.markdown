@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Using Serializers to Pass Data to the Frontend"
-date:       2020-02-14 12:47:24 +0000
+date:       2020-02-14 07:47:25 -0500
 permalink:  using_serializers_to_pass_data_to_the_frontend
 ---
 
@@ -38,7 +38,7 @@ Now we can see the result by going directly to the url `project_url/positions` w
 		category: "Frontend",
 		technology: "React"
 	},
-...
+	...
 ]
 ```
 
@@ -47,10 +47,12 @@ This is all as expected, however the the position object attribute names have be
 To fix this issue we can make use of serializers in rails to define exactly what data we wish to pass to frontend when handling a request as well as how exactly to present that data. Firstly we need to enable the use of serializers in the project but uncommenting the rails serailizers gem that comes with rails in API mode.
 
 ```ruby
-	/Gemfile.rb
+	/gemfile.rb
 	...
+	
 	# Use Active Model Serializer to handle API requests
 	gem 'active_model_serializers'
+	
 	...
 ```
 
