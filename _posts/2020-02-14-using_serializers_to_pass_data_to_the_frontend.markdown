@@ -44,7 +44,7 @@ Now we can see the result by going directly to the url `project_url/positions` w
 
 This is all as expected, however the the position object attribute names have been sent to the frontend still using ruby naming coventions - see `experience_required: "5 years"`. This isn't the end of the world, however it then adds the additional job of  renaming on the frontend if the object keys are expected to follow JavaScript camelCase naming conventions - even more so if a team split up into backend and frontend respectively was working on a larger project.
 
-To fix this issue we can make use of serializers in rails to define exactly what data we wish to pass to frontend when handling a request as well as how exactly to present that data. Firstly we need to enable the use of serializers in the project but uncommenting the rails serailizers gem that comes with rails in API mode.
+To fix this issue we can make use of serializers in rails to define exactly what data we wish to pass to frontend when handling a request as well as how exactly to present that data. Firstly we need to enable the use of serializers in the project by uncommenting the rails serailizers gem that comes in the gemfile with rails in API mode.
 
 ```ruby
 	#gemfile.rb
