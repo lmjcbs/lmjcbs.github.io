@@ -10,11 +10,11 @@ In my JavaScript Project Devboard I chose to make use of rails as an api instead
 
 `$ rails new devboard-api --api`
 
-This generates the project normally however with a few key differences. Most importantly ApplicationController will inherit from ActionController::API instead of ActionController::Base and the fact that view files will no longer be generated when using scaffolding.
+This generates the project normally however with a few key differences. Most importantly ApplicationController will inherit from ActionController::API instead of ActionController::Base and view files will no longer be generated when using scaffolding.
 
-Within the rails project actions within the controller now need to change how we are returning the data. As we will be using JavaScript for the frontend, we need to use a common ground between Ruby and JavaScript, a format that both langauges can parse and encode to - in our case that format is JSON. 
+Within the rails project, actions within the controllers now need to change to reflect how we wish to pass the data to the frontend. As we will be using JavaScript for the frontend and Rails for the API, we need to use a common ground between Ruby and JavaScript when passing data between the two. Preferably a standard that both langauges can parse and encode to - in our case that's JSON. 
 
-To implement this change we simply set the actions to return the output in JSON instead of a particular view file with the following.
+To implement this change we simply set the actions to return the data in JSON format instead of rendering a particular view file with the following.
 
 ```ruby
   # GET /positions
@@ -64,7 +64,7 @@ Next we need to create the serializers for each model in our project we wish to 
 	end
 ```
 
-Here we've formatted :experience_required to :experienceRequired, however :experienceRequired isn't an column on our positions table, to fix this we can define an attrbute method to return a desired value. in our case the experience_required attribute value.
+Here we've formatted :experience_required to :experienceRequired, however :experienceRequired isn't a column on our positions table, to fix this we can define an attribute method to return a desired value. in our case the experience_required attribute value.
 
 ```ruby
 	#/app/serializers/position_serializer.rb
