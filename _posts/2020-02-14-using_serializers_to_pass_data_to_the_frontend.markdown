@@ -47,8 +47,8 @@ This is all as expected, however the the position object attribute names have be
 To fix this issue we can make use of serializers in rails to define exactly what data we wish to pass to frontend when handling a request as well as how exactly to present that data. Firstly we need to enable the use of serializers in the project but uncommenting the rails serailizers gem that comes with rails in API mode.
 
 ```ruby
-	...
 	#gemfile.rb
+	...
 	gem 'active_model_serializers'
 	...
 ```
@@ -77,7 +77,7 @@ Here we've formatted :experience_required to :experienceRequired, however :exper
 	end
 ```
 
-After going ahead and changing the attribute names and adding their respective methods, if we now go back to our `project_url/positions` url, we'll see the changes in the JSON object.
+After going ahead and changing the attribute names and adding their respective methods, if we now go back to our `project_url/positions` url, we'll see the changes in the JSON response.
 
 ```
 [
