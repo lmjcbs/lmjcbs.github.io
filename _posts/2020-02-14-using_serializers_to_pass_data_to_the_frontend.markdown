@@ -47,7 +47,7 @@ This is all as expected, however the the position object attribute names have be
 To fix this issue we can make use of serializers in rails to define exactly what data we wish to pass to frontend when handling a request as well as how exactly to present that data. Firstly we need to enable the use of serializers in the project but uncommenting the rails serailizers gem that comes with rails in API mode.
 
 ```ruby
-	
+	#gemfile.rb
 	gem 'active_model_serializers'
 	
 ```
@@ -57,7 +57,7 @@ then run `bundle install` so it's ready to go.
 Next we need to create the serializers for each model in our project we wish to serialize. To do this create the serializers in a new folder called serializers from within the app directory and the define the class with the attributes we wish to send.
 
 ```ruby
-	/app/serializers/position_serializer.rb
+	#/app/serializers/position_serializer.rb
 	class PositionSerializer < ActiveModel::Serializer
 		attributes :id, :title, :company, :description, :salaryGBP, :experienceRequired, :location, :category, :technology
 	end
@@ -66,7 +66,7 @@ Next we need to create the serializers for each model in our project we wish to 
 Here we've formatted :experience_required to :experienceRequired, however :experienceRequired isn't an column on our positions table, to fix this we can define an attrbute method to return a desired value. in our case the experience_required attribute value.
 
 ```ruby
-	/app/serializers/position_serializer.rb
+	#/app/serializers/position_serializer.rb
 	class PositionSerializer < ActiveModel::Serializer
 		attributes :id, :title, :company, :description, :salaryGBP, :experienceRequired, :location, :category, :technology
 		
