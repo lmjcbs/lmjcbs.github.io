@@ -47,9 +47,10 @@ This is all as expected, however the the position object attribute names have be
 To fix this issue we can make use of serializers in rails to define exactly what data we wish to pass to frontend when handling a request as well as how exactly to present that data. Firstly we need to enable the use of serializers in the project but uncommenting the rails serailizers gem that comes with rails in API mode.
 
 ```ruby
+	...
 	#gemfile.rb
 	gem 'active_model_serializers'
-	
+	...
 ```
 
 then run `bundle install` so it's ready to go.
