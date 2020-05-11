@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Understanding Big O Notation"
-date:       2020-05-10 22:35:10 +0000
+date:       2020-05-10 18:35:11 -0400
 permalink:  understanding_big_o_notation
 ---
 
@@ -9,6 +9,12 @@ permalink:  understanding_big_o_notation
 Since graduating from Flatiron’s software engineering course I’ve wanted to delve deeper into algorithms and data structures. When starting on this, I was quickly confronted with the idea of Big O notation, and specifically how this can impact the overall performance of the algorithms that I’m using in my program. 
 
 O(1) describes an algorithm that will always execute in the same time (or space) regardless of the size of the input data set.
+
+```
+const func = ( resturaunts ) => {
+    return 1 + 4
+}
+```
 
 O(N) describes an algorithm that performance scales linearly, and so as the size of the input grows so does the amount of work that needs to be done. A good example of this is a function that creates a loop to iterate over each input value and check the value against a test. As the input grows, so does the size of the loop by the same amount as the function needs to check each value.
 
