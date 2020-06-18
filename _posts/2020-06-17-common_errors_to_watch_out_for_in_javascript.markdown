@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Common errors to watch out for in Javascript"
-date:       2020-06-17 21:25:38 +0000
+date:       2020-06-17 17:25:39 -0400
 permalink:  common_errors_to_watch_out_for_in_javascript
 ---
 
@@ -40,4 +40,25 @@ Using Javascript's deep comparison triple equals comparator we can extend the ch
 
 ```
 0 === false   // false
+```
+
+### Using import and export ES2015 syntax
+
+`import` and `export` may only appear at the top-level, or outer most scope of the module file itself. Importing a specific function within a block for use will throw an error.
+
+```
+if (conditionIsTrue) {
+  import { myFunc } from 'myModule'; // error: 'import' and 'export' may only appear at the top-level
+  myFunc();
+}
+```
+
+In order to fix this error, all import statements must be moved out of the if statement scope and into the outer module scope.
+
+```
+import { myFunc } from 'myModule';  // now exists at the top of the module.
+
+if (conditionIsTrue) {
+  myFunc(); // will no longer throw an error
+}
 ```
