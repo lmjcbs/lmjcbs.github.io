@@ -44,6 +44,42 @@ console.log(j) // 5
 
 This behaviour happens because `let` is block scoped to the `for` loop and therefore the `console.log` has no way to find the value of `i`, whereas the `var` keyword can be hoisted outside of the scope it is called in.
 
+### Semi colon injection
+
+JavaScript is typically very lenient about the use of semi colon's in that it will automatically inject semi colons where needed at runtime, in the case they have been omitted. This has the advantage of not having to worry about every single semicolon, in order to avoid errors at runtime.
+
+```
+let i = 0 // will be read as let i = 0; 
+```
+
+similarly spacing your code on to multiple lines will cause unwanted errors as JavaScript inserts semicolons where it sees fit.
+
+```
+function add(x, y) {
+  return
+  x+y
+}
+```
+
+this example will not return x+y as a semicolon is inserted after `return`. The above code is interpreted as follow;
+
+```
+function add(x, y) {
+  return;
+  x+y; // this is never read
+}
+```
+
+In order to avoid the above behaviour you can make use of parentheses for grouped expressions or multi-line expressions.
+
+```
+function add(x, y) {
+   return (
+     x + y
+   ); // will return a + b
+}
+```
+
 ### Truthy vs falsy and deep equality
 
 In javascript `==` checks for whether a value is truthy or falsy and then compares them. That's why it's possible to have results such as 
