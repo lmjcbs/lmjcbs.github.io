@@ -8,6 +8,22 @@ permalink:  common_errors_to_watch_out_for_in_javascript
 
 In this blog post I'll be looking at some of the more common gotchas to watch out for when working with javascript. This list is intended to be a point of reference and will be expanded as I come across new quirks in the future.
 
+### Assinging values to variables
+
+consider the following example;
+
+```
+let array1 = [1,2,3];
+let array2 = array1;
+array2.push(4);
+array2; // [1,2,3,4]
+array1; // [1,2,3,4] // Also has 4 appended to it.
+```
+
+The key gotcha here is that primitive values (number, boolean, string, undefined, symbol, null) are assigned by copying the value to a new space in memory, while object values (arrays, functions, dates) are assigned by reference, meaning that objects will not be cloned from one variable to another, but instead the variable acts as a reference to the object.
+
+In our example here `array1` and `array2` are both references to the same array in memory, and so appending 4 to the array that both `array1` and `array2` are referencing causes the change to appear in both places.
+
 ### var vs let keywords
 
 the var and let keywords are both used to assign variables in javascript however they have slight nuances in how they behave, consider the following example.
