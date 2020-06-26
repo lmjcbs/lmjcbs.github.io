@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Logic gates and bitwise operators"
-date:       2020-06-26 06:31:10 +0000
+date:       2020-06-26 02:31:11 -0400
 permalink:  logic_gates_and_bitwise_operators
 ---
 
@@ -29,3 +29,15 @@ OR `true || false = true`, as the conditions are met to satisfy the OR gate. At 
 NOT `!true = false`, here the sole input signal is simply inversed, so our true input is converted to a false value.
 
 These come in extremely useful for controlling the flow of applications to trigger certain effects, only once certain conditions are met.
+
+Similarly to logic operators, bitwise operators look very familiar.
+
+AND `&`, Sets each bit to 1 if both bits are 1
+
+OR `|`, Sets each bit to 1 if one of two bits is 1
+
+NOT `~`, Inverts all the bits
+
+XOR `^`, represents an exclusive OR gate. Whereas with a standard OR gate, if both inputs had a signal this would still satisfy the condition of one inputs having a signal, exclusive OR requires that there is only one signal from the two inputs, and in our example of both inputs containing a signal, the output would contain no signal.
+
+
