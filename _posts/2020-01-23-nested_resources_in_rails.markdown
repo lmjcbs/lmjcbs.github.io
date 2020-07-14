@@ -8,7 +8,7 @@ permalink:  nested_resources_in_rails
 
 Resources are sets of routes that map requests made with HTTP verbs to actions (usually CRUD) in a controller, for a table which is represented by a particular Model in a rails application.  In the context of my rails Project Taskr, this could be described as 
 
-A Project model which has an associated table in the database, that also has a projects controller to handle its CRUD actions.
+A Project model that has an associated table in the database, that also has a projects controller to handle its CRUD actions.
 
 In the routes.rb file of my project I first need to establish the routes for this with,
 
@@ -53,9 +53,9 @@ class ProjectsController < ApplicationController
 end
 ```
 
-And within these actions we have now defined we can place the logic to get our actions working as inteded with the views.
+And within these actions we have now defined we can place the logic to get our actions working as intended with the views.
 
-Now we have the basis of a CRUD rails application, we can now go deeper and look at the nested aspect - in this case, adding an additional tasks resource to the projects, which in plain english will allow us to have all the crud functionality that we just created, but for tasks which will be associated to their parent Project resource. 
+Now we have the basis of a CRUD rails application, we can now go deeper and look at the nested aspect - in this case, adding an additional tasks resource to the projects, which in plain English will allow us to have all the crud functionality that we just created, but for tasks which will be associated to their parent Project resource. 
 
 To better understand what this will look like we can go ahead and define the nested resource in our routes.rb file again. 
 
@@ -75,9 +75,9 @@ Now if we head back to our terminal to view the routes for the project with the 
 
 ![](https://i.imgur.com/9QMiVHn.png?1)
 
-Here we can see that instead of the standard prefix for the routes being used for tasks, all task routes have a project prefix indicating we have correctly setup the nested routes.
+Here we can see that instead of the standard prefix for the routes being used for tasks, all task routes have a project prefix indicating we have correctly set up the nested routes.
 
-After ensuring we have set up the controller with appropriate actions to handle the crud functionality of the tasks, we also need to remember to define the association between the two models, in this case a Project has many tasks and a task belongs to a project. 
+After ensuring we have set up the controller with appropriate actions to handle the crud functionality of the tasks, we also need to remember to define the association between the two models, in this case, a Project has many tasks and a task belongs to a project. 
 
 
 ```ruby
