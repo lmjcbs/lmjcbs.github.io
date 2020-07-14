@@ -6,9 +6,9 @@ permalink:  common_errors_to_watch_out_for_in_javascript
 ---
 
 
-In this blog post I'll be looking at some of the more common gotchas to watch out for when working with javascript. This list is intended to be a point of reference and will be expanded as I come across new quirks in the future.
+In this post, I'll be looking at some of the more common gotchas to watch out for when working with javascript. This list is intended to be a point of reference and will be expanded as I come across new quirks in the future.
 
-### Assinging values to variables
+### Assigning values to variables
 
 consider the following example;
 
@@ -42,11 +42,11 @@ for(var j=0; j<5; j++) {
 console.log(j) // 5
 ```
 
-This behaviour happens because `let` is block scoped to the `for` loop and therefore the `console.log` has no way to find the value of `i`, whereas the `var` keyword can be hoisted outside of the scope it is called in.
+This behaviour happens because `let` is block-scoped to the `for` loop and therefore the `console.log` has no way to find the value of `i`, whereas the `var` keyword can be hoisted outside of the scope it is called in.
 
 ### Semi colon injection
 
-JavaScript is typically very lenient about the use of semi colon's in that it will automatically inject semi colons where needed at runtime, in the case they have been omitted. This has the advantage of not having to worry about every single semicolon, in order to avoid errors at runtime.
+JavaScript is typically very lenient about the use of semi colon's in that it will automatically inject semicolons where needed at runtime, in the case they have been omitted. This has the advantage of not having to worry about every single semicolon, to avoid errors at runtime.
 
 ```
 let i = 0 // will be read as let i = 0; 
@@ -70,7 +70,7 @@ function add(x, y) {
 }
 ```
 
-In order to avoid the above behaviour you can make use of parentheses for grouped expressions or multi-line expressions.
+To avoid the above behaviour you can make use of parentheses for grouped expressions or multi-line expressions.
 
 ```
 function add(x, y) {
@@ -88,7 +88,7 @@ In javascript `==` checks for whether a value is truthy or falsy and then compar
 ```
 crop up in your code, this can be explained because JavaScript sees `0` as a falsy value, as well as `false`, which is also a falsy value.
 
-Using Javascript's deep comparison triple equals comparator we can extend the check to types, which usally gives the desired result of false.
+Using Javascript's deep comparison triple equals comparator we can extend the check to types, which usually gives the desired result of false.
 
 ```
 0 === false   // false
@@ -96,7 +96,7 @@ Using Javascript's deep comparison triple equals comparator we can extend the ch
 
 ### Using import and export ES2015 syntax
 
-`import` and `export` may only appear at the top-level, or outer most scope of the module file itself. Importing a specific function within a block for use will throw an error.
+`import` and `export` may only appear at the top-level, or outermost scope of the module file itself. Importing a specific function within a block for use will throw an error.
 
 ```
 if (conditionIsTrue) {
@@ -105,7 +105,7 @@ if (conditionIsTrue) {
 }
 ```
 
-In order to fix this error, all import statements must be moved out of the if statement scope and into the outer module scope.
+To fix this error, all import statements must be moved out of the if statement scope and into the outer module scope.
 
 ```
 import { myFunc } from 'myModule';  // now exists at the top of the module.
