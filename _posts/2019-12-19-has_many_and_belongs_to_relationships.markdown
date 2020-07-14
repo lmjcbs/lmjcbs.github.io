@@ -6,7 +6,7 @@ permalink:  has_many_and_belongs_to_relationships
 ---
 
 
-Active record offers up a whole host of associations that we can use to establish relationships between our models.
+Active Record offers up a whole host of associations that we can use to establish relationships between our models.
 
 * belongs_to
 * has_many
@@ -15,11 +15,11 @@ Active record offers up a whole host of associations that we can use to establis
 * has_one :through
 * has_and_belongs_to_many
 
-In this blog post i'll be looking into the belongs_to and has_many associations in more detail, as well as showing how to use the associations in the context of my Sinatra Project  jewel-tracker.
+In this blog post, I'll be looking into the belongs_to and has_many associations in more detail, as well as showing how to use the associations in the context of my Sinatra Project Jewel-tracker.
 
-First we want to make sure we have ActiveRecord setup correctly in our models. To achieve this we need to inherit ActiveRecord into the models. In my case this a Jewel and a User model.
+First, we want to make sure we have ActiveRecord set up correctly in our models. To achieve this we need to inherit ActiveRecord into the models. In my case this a Jewel and a User model.
 
-Next we want to establish the direction of the relationship. A User should be able to create instances of jewels they collect, therefore a jewel should also have a owner. Using this information we can determine that a user should have many jewels and a jewel should belong to a user.
+Next, we want to establish the direction of the relationship. A User should be able to create instances of jewels they collect, therefore a jewel should also have an owner. Using this information we can determine that a user should have many jewels and a jewel should belong to a user.
 
 Our two models should now look as follows.
 
@@ -39,9 +39,9 @@ class User < ActiveRecord::Base
 end	
 ```
 
-**Note:** Ensure the model name which has the belongs_to association is pluralized when referring to the model from the has_many association, in this case **:jewels**.
+**Note:** Ensure the model name which has the belongs_to association is pluralized when referring to the model from the has_many association, in this case, **:jewels**.
 
-The next step is to ensure ActiveRecord can make the link between the two models once their instances have been persisted to the database.  As the direction of the has_many belongs_to relationship is one way, we only need add a key to our jewels model, which should be named after the model with which it shares the realtionship. 
+The next step is to ensure ActiveRecord can make the link between the two models once their instances have been persisted to the database.  As the direction of the has_many belongs_to relationship is one way, we only need to add a key to our jewels model, which should be named after the model with which it shares the relationship. 
 
 We can do this by adding a user_id column to our jewels table.
 
@@ -67,11 +67,11 @@ ActiveRecord::Schema.define(version) do
 end	
 ```
 
-The important part here being the user_id column we have defined in the jewels table. We don't need to include a seperate key for the users table when building this relationship as the user_id column will refer to the primary_key  or id attribute of the user model.
+The important part here is the user_id column we have defined in the jewels table. We don't need to include a separate key for the user's table when building this relationship as the user_id column will refer to the primary_key  or id attribute of the user model.
 
-Which brings me onto the next step - creating the link within our application. These steps alone aren't yet enough for us to be able to use the methods made availiable to us through the relationship. Ideally we'll want  to establish the relationship by setting the the jewel.user_id attribute to the id attribute of the user, as the user instantiates a new jewel model.
+Which brings me onto the next step - creating the link within our application. These steps alone aren't yet enough for us to be able to use the methods made available to us through the relationship. Ideally, we'll want to establish the relationship by setting the jewel.user_id attribute to the id attribute of the user, as the user instantiates a new jewel model.
 
-If we were currently logged into a user, and wanted to create a new jewel model, we could achieve this with something like.
+If we were currently logged in as a user and wanted to create a new jewel model, we could achieve this with something like.
 
 ```ruby
 user1 = User.create(name: "Jack")
@@ -83,7 +83,7 @@ jewel2 = Jewel.create(user_id: user1.id, name: "Sapphire")
 
 Now we have done all the hard work and successfully implemented a has_many belongs_to relationship.
 
-Going forward we can now make use of the methods made availiable to us through ActiveRecord associations. Using the example above, if we wanted to get a list of all jewels that user1 has created we can use call the .jewels method on the user.
+Going forward we can now make use of the methods made available to us through ActiveRecord associations. Using the example above, if we wanted to get a list of all jewels that user1 has created we can use call the .jewels method on the user.
 
 ```ruby
 user1 = User.create(name: "Jack")
@@ -109,14 +109,3 @@ As these methods return standard ruby data types such as arrays and objects, we 
 ```ruby
 user1.jewels.size # => 2
 ```
-
-
-
-
-
-
-
-
-
-
-
