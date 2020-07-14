@@ -26,7 +26,7 @@ const findResturauntMenus = ( resturaunts ) => {
 }
 ```
 
-O(N2) represents an algorithm that performance is exponential to the input it’s given. This means that as the input grows, so does the runtime of the algorithm by a square of the input size. This is a common occurrence in problems where values in an input have the checked against other values in the same input. A brute force solution to these types of problems is to create a nested loop, whereby for each value of input, a sub loop is created to test all of the other values against it.
+O(N2) represents an algorithm that performance is exponential to the input it’s given. This means that as the input grows, so does the runtime of the algorithm by a square of the input size. This is a common occurrence in problems where input values have to be checked against other values in the same input. A brute force solution to these types of problems is to create a nested loop, whereby for each value of the input, a new loop is created to test all of the other values against it.
 
 ```
 const findSimilarResturauntMenus = ( resturaunts ) => {
@@ -42,5 +42,7 @@ const findSimilarResturauntMenus = ( resturaunts ) => {
 }
 ```
 
-With a lot of the more complex algorithm problems I’ve come across, there’s usually a variety of solutions - some better than others. In my experience i’ve found some of the biggest improvements of algorithm runtime are made when a brute force solution, or most obvious solution is moved from O(N2) to O(N) with a single pass strategy, eliminating the need for a nested loop altogether through the use of maps to store the information during the initial pass. However such solution usually increases the space complexity of the solution, as new data structures that are tied to the size of the input are also being created. More often than not, the slight increase in runtime complexity is often outweighed by the benefits of using a single pass strategy. With all solutions though it is a balancing act, where the benefits of each solution have to considered before deciding the best strategy to take when coding an optimal solution. Understanding the BigO notation has greatly helped me identify the types of problems and therefore what possible solutions I have at my disposal.
+With a lot of the more complex algorithm problems I’ve come across, there’s usually a variety of solutions - some better than others. In my experience I’ve found some of the biggest improvements of algorithm runtime are made when a brute force solution or most obvious solution is moved from O(N2) to O(N) with a single pass strategy, eliminating the need for a nested loop altogether through the use of maps to store the information during the initial pass. However, such a solution usually increases the space complexity of the solution, as new data structures that are tied to the size of the input are also being created. More often than not, the slight increase in runtime complexity is often outweighed by the benefits of using a single pass strategy. With all solutions though it is a balancing act, where the benefits of each solution have to be considered before deciding the best strategy to take when coding an optimal solution. Understanding the BigO notation has greatly helped me identify the types of problems and therefore what possible solutions I have at my disposal.
+
+
 
